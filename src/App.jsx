@@ -11,7 +11,7 @@ function List(props) {
 
   return (
     <ul>
-      {props.animalsList.map((animal) => {
+      {props.animalsList.map(animal => {
         return <li key={animal}>{animal}</li>;
       })}
     </ul>
@@ -19,7 +19,7 @@ function List(props) {
 }
 
 function App() {
-  const animals = ["Toger"];
+  const animals = ["Tiger" , "Lion", "Giraffe", "Elephant"];
 
   return (
     <div>
