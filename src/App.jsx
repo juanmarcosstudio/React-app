@@ -1,32 +1,35 @@
-import './App.css'
+import { useState } from 'react';
+import { initialTravelPlan } from './Greeting.jsx';
 
-function List(props) {
-  if (!props.animalsList) {
-    return <div>Loading...</div>;
-  }
-
-  if (props.animalsList.length === 0) {
-    return <div>There are no animals in the list!</div>;
-  }
-
+function PlaceTree({ place }) {
+  const childPlaces = place.childPlaces;
   return (
-    <ul>
-      {props.animalsList.map(animal => {
-        return <li key={animal}>{animal}</li>;
-      })}
-    </ul>
+    <li>
+      {place.title}
+      {childPlaces.length > 0 && (
+        <ol>
+          {childPlaces.map(place => (
+            <PlaceTree key={place.id} place={place} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
+
+function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+  const planets = plan.childPlaces;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planets.map(place => (
+          <PlaceTree key={place.id} place={place} />
+        ))}
+      </ol>
+    </>
   )
 }
 
-function App() {
-  const animals = ["Tiger" , "Lion", "Giraffe", "Elephant"];
-
-  return (
-    <div>
-      <h1>Animals: </h1>
-      <List animalsList={animals} />
-    </div>
-  )
-}
-
-export default App;
+export default TravelPlan;
