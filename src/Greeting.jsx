@@ -1,55 +1,197 @@
-function List() {
-    const people = [{
-
-        id: 0,
-        name: 'Creola Katherine Johnson',
-        profession: 'mathematician',
-        accomplishment: 'spaceflight calculations',
-        imageId: 'MK3eW3A'
-      }, {
-        id: 1,
-        name: 'Mario José Molina-Pasquel Henríquez',
-        profession: 'chemist',
-        accomplishment: 'discovery of Arctic ozone hole',
-        imageId: 'mynHUSa'
-      }, {
-        id: 2,
-        name: 'Mohammad Abdus Salam',
-        profession: 'physicist',
-        accomplishment: 'electromagnetism theory',
-        imageId: 'bE7W1ji'
-      }, {
+export const initialTravelPlan = {
+  id: 0,
+  title: '(Root)',
+  childPlaces: [{
+    id: 1,
+    title: 'Earth',
+    childPlaces: [{
+      id: 2,
+      title: 'Africa',
+      childPlaces: [{
         id: 3,
-        name: 'Percy Lavon Julian',
-        profession: 'chemist',
-        accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
-        imageId: 'IOjWm71'
+        title: 'Botswana',
+        childPlaces: []
       }, {
         id: 4,
-        name: 'Subrahmanyan Chandrasekhar',
-        profession: 'astrophysicist',
-        accomplishment: 'white dwarf star mass calculations',
-        imageId: 'lrWQx8l'
-      }];
-      
-    const chemist = people.filter(person =>
-        person.profession === 'chemist'
-    );
-    const listItems = chemist.map(person =>
-        <li key={person.id}>
-            <img
-                src={'https://i.imgur.com/' + person.imageId + 's.jpg'}
-                alt={person.name}
-            />
-            <p>
-                <b>{person.name}:</b>
-                {'' + person.profession + ''}
-                known for (person.accomplishment)
-            </p>
-        </li>
-    );
-    return <ul>{listItems}</ul>
-    
-}
-
-export default List;
+        title: 'Egypt',
+        childPlaces: []
+      }, {
+        id: 5,
+        title: 'Kenya',
+        childPlaces: []
+      }, {
+        id: 6,
+        title: 'Madagascar',
+        childPlaces: []
+      }, {
+        id: 7,
+        title: 'Morocco',
+        childPlaces: []
+      }, {
+        id: 8,
+        title: 'Nigeria',
+        childPlaces: []
+      }, {
+        id: 9,
+        title: 'South Africa',
+        childPlaces: []
+      }]
+    }, {
+      id: 10,
+      title: 'Americas',
+      childPlaces: [{
+        id: 11,
+        title: 'Argentina',
+        childPlaces: []
+      }, {
+        id: 12,
+        title: 'Brazil',
+        childPlaces: []
+      }, {
+        id: 13,
+        title: 'Barbados',
+        childPlaces: []
+      }, {
+        id: 14,
+        title: 'Canada',
+        childPlaces: []
+      }, {
+        id: 15,
+        title: 'Jamaica',
+        childPlaces: []
+      }, {
+        id: 16,
+        title: 'Mexico',
+        childPlaces: []
+      }, {
+        id: 17,
+        title: 'Trinidad and Tobago',
+        childPlaces: []
+      }, {
+        id: 18,
+        title: 'Venezuela',
+        childPlaces: []
+      }]
+    }, {
+      id: 19,
+      title: 'Asia',
+      childPlaces: [{
+        id: 20,
+        title: 'China',
+        childPlaces: []
+      }, {
+        id: 21,
+        title: 'India',
+        childPlaces: []
+      }, {
+        id: 22,
+        title: 'Singapore',
+        childPlaces: []
+      }, {
+        id: 23,
+        title: 'South Korea',
+        childPlaces: []
+      }, {
+        id: 24,
+        title: 'Thailand',
+        childPlaces: []
+      }, {
+        id: 25,
+        title: 'Vietnam',
+        childPlaces: []
+      }]
+    }, {
+      id: 26,
+      title: 'Europe',
+      childPlaces: [{
+        id: 27,
+        title: 'Croatia',
+        childPlaces: [],
+      }, {
+        id: 28,
+        title: 'France',
+        childPlaces: [],
+      }, {
+        id: 29,
+        title: 'Germany',
+        childPlaces: [],
+      }, {
+        id: 30,
+        title: 'Italy',
+        childPlaces: [],
+      }, {
+        id: 31,
+        title: 'Portugal',
+        childPlaces: [],
+      }, {
+        id: 32,
+        title: 'Spain',
+        childPlaces: [],
+      }, {
+        id: 33,
+        title: 'Turkey',
+        childPlaces: [],
+      }]
+    }, {
+      id: 34,
+      title: 'Oceania',
+      childPlaces: [{
+        id: 35,
+        title: 'Australia',
+        childPlaces: [],
+      }, {
+        id: 36,
+        title: 'Bora Bora (French Polynesia)',
+        childPlaces: [],
+      }, {
+        id: 37,
+        title: 'Easter Island (Chile)',
+        childPlaces: [],
+      }, {
+        id: 38,
+        title: 'Fiji',
+        childPlaces: [],
+      }, {
+        id: 39,
+        title: 'Hawaii (the USA)',
+        childPlaces: [],
+      }, {
+        id: 40,
+        title: 'New Zealand',
+        childPlaces: [],
+      }, {
+        id: 41,
+        title: 'Vanuatu',
+        childPlaces: [],
+      }]
+    }]
+  }, {
+    id: 42,
+    title: 'Moon',
+    childPlaces: [{
+      id: 43,
+      title: 'Rheita',
+      childPlaces: []
+    }, {
+      id: 44,
+      title: 'Piccolomini',
+      childPlaces: []
+    }, {
+      id: 45,
+      title: 'Tycho',
+      childPlaces: []
+    }]
+  }, {
+    id: 46,
+    title: 'Mars',
+    childPlaces: [{
+      id: 47,
+      title: 'Corn Town',
+      childPlaces: []
+    }, {
+      id: 48,
+      title: 'Green Hill',
+      childPlaces: []      
+    }]
+  }]
+};
